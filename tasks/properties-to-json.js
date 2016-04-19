@@ -55,7 +55,6 @@ module.exports = function(grunt) {
                }
 
         });
-//        grunt.log.writeln(JSON.stringify(okKeys,null,2));
         if (badKeys.length > 0) {
             return null;
         }
@@ -140,29 +139,12 @@ module.exports = function(grunt) {
                 }
                 data = sortKeysBy(parser.read(src));
 
-
-                if (src.indexOf('package.') > -1) {
-
-/*
-                    grunt.log.writeln('======== begin AMERICAN ENGLISH PROPS data ========');
-                    //grunt.log.writeln(JSON.stringify(data,null,2));
-                    grunt.log.writeln(JSON.stringify(parser.read(src),null,2));
-                    grunt.log.writeln('======== end AMERICAN ENGLISH PROPS data ========');
-*/
-
-               }
-
                 if (options.splitKeysBy) {
                     data = splitKeysBy(data, options, src);
                 }
                 if (options.exclude) {
                     data = filter(data, toRegExps(options.exclude), false, !!options.deepExclude);
                 }
-/*
-                if (options.include) {
-                    data = filter(data, toRegExps(options.include), true, !!options.deepInclude);
-                }
-*/
 
                 if (badKeys.length <= 0) {
                     if (options.merge) {
