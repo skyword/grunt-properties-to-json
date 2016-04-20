@@ -1,5 +1,9 @@
 # grunt-properties-to-json changelog
 
+### 0.5.1 (April 20, 2016)
+
+* [FEATURE] Added error handling for defined child/parent keys.
+
 ### 0.5.0 (Februari 18, 2015)
 
 * [FEATURE] Added support for deep includes/excludes.

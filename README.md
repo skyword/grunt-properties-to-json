@@ -82,6 +82,71 @@ grunt.initConfig({
 });
 ```
 
+#### Suppress specific errors
+
+You can explicitly `suppress` error messages for specified keys. For each option, provide a string. Note this only suppresses the messages for the specified key. The issue it was causing will still exist (e.g. if both a key and its parent are defined, only the parent will be added to the final file).
+
+```js
+grunt.initConfig({
+    propertiesToJSON: {
+        main: {
+            src: ['path/to/properties/files', 'another/path/to/properties/files'],
+            dest: 'tmp',
+            options: {
+                splitKeysBy: '.',
+                exclude: ['message', /label$/],
+                deepExclude: true,
+                suppress: ['angular.language.es.419','angular.asset.cropedit']
+            }
+        }
+    }
+});
+
+#### Errors
+
+If in your properties file you have defined a both key and a parent key, a fail error will be thrown and grunt will stop. The error displayed will show the path to the file and the name of the offending key for each file the error was found in. For example: It the following exaple will throw an error:
+
+```
+angular.language.es = Spanish
+angular.language.es.419 = Latin American Spanish
+``` 
+The error will display:
+```
+>> There was an error so no properties json files were written.
+>> Error list:
+
+>> apps/src/skyword/action/package.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_de.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_en_GB.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_es.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_fr.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_it.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_ja.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_ko_KR.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_nl_NL.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_pt_BR.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_ru.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_sv.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_tr.properties - angular.language.es.419 - Has defined parent
+
+>> apps/src/skyword/action/package_zh.properties - angular.language.es.419 - Has defined parent
+Fatal error: BAD PROP KEYS 
+See above list. ^^
+```
+
+
 #### Merge multiple property files to one JSON file
 
 If you want multiple property files to be merged to one JSON file, you can set the `merge` option to `true`. The destination should be a file in which the merged JSON output will be written. You can combine this option with the options mentioned above (the merge will be applied as last operation, so splitted keys will also be merged).
