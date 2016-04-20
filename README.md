@@ -101,6 +101,7 @@ grunt.initConfig({
         }
     }
 });
+```
 
 #### Errors
 
@@ -110,7 +111,9 @@ If in your properties file you have defined a both key and a parent key, a fail 
 angular.language.es = Spanish
 angular.language.es.419 = Latin American Spanish
 ``` 
+
 The error will display:
+
 ```
 >> There was an error so no properties json files were written.
 >> Error list:
@@ -145,7 +148,6 @@ The error will display:
 Fatal error: BAD PROP KEYS 
 See above list. ^^
 ```
-
 
 #### Merge multiple property files to one JSON file
 
