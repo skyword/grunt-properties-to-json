@@ -118,33 +118,15 @@ The error will display:
 >> There was an error so no properties json files were written.
 >> Error list:
 
->> apps/src/skyword/action/package.properties - angular.language.es.419 - Has defined parent
+>> apps/src/action/package.properties - angular.language.es.419 - Has defined parent
 
->> apps/src/skyword/action/package_de.properties - angular.language.es.419 - Has defined parent
+>> apps/src/action/package_es.properties - angular.language.es.419 - Has defined parent
 
->> apps/src/skyword/action/package_en_GB.properties - angular.language.es.419 - Has defined parent
+>> apps/src/action/package_ru.properties - angular.language.es.419 - Has defined parent
 
->> apps/src/skyword/action/package_es.properties - angular.language.es.419 - Has defined parent
+>> apps/src/action/package_tr.properties - angular.language.es.419 - Has defined parent
 
->> apps/src/skyword/action/package_fr.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_it.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_ja.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_ko_KR.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_nl_NL.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_pt_BR.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_ru.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_sv.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_tr.properties - angular.language.es.419 - Has defined parent
-
->> apps/src/skyword/action/package_zh.properties - angular.language.es.419 - Has defined parent
+>> apps/src/action/package_zh.properties - angular.language.es.419 - Has defined parent
 Fatal error: BAD PROP KEYS 
 See above list. ^^
 ```
